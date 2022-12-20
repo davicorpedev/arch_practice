@@ -1,0 +1,22 @@
+{
+    "homePageTitle": "Images",
+    "@homePageTitle": {
+      "description": "Home Page App Bar Title"
+    },
+    "homePageErrorLabel": "You haven't searched any image yet",
+    "@homePageErrorLabel": {
+      "description": "Home Page Error State Label"
+    },
+    "tryAgain": "Try Again",
+    "@tryAgain": {
+      "description": "Try Again Label"
+    },
+    "searchTextFielHint": "Search an image...",
+    "@searchTextFielHint": {
+      "description": "Search TextField Hint Text"
+    },
+    "appInitializerErrorLabel": "Error while launching the App",
+    "@appInitializerErrorLabel": {
+      "description": "App Initializer Error State Labelt"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "homePageTitle": "Imagenes",
+    "homePageErrorLabel": "Aún no has buscado ninguna imagen",
+    "tryAgain": "Intentar otra vez",
+    "searchTextFielHint": "Busca una imagen...",
+    "appInitializerErrorLabel": "Error al iniciar la aplicación"
+}

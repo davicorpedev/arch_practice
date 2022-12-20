@@ -1,0 +1,27 @@
+name: practice_api
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+homepage:
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Value equality
+  equatable: ^2.0.5
+  # Remote API
+  http: ^0.13.5
+
+  practice_repositories:
+    path: ../practice_repositories
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
