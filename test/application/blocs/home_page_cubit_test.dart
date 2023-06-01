@@ -10,7 +10,7 @@ import 'package:practice_repositories/repositories/image_repository.dart';
 class MockImageRepository extends Mock implements ImageRepository {}
 
 void main() {
-  late final MockImageRepository repository;
+  late MockImageRepository repository;
 
   setUp(() {
     repository = MockImageRepository();

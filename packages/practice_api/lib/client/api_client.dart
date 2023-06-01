@@ -1,8 +1,8 @@
 import 'package:practice_api/client/api_requester.dart';
-import 'package:practice_api/client/api_result.dart';
+import 'package:practice_api/models/ai_image_model.dart';
 
 abstract class ApiClient {
-  Future<ApiResult> loadImages({required String prompt});
+  Future<List<AiImageModel>> loadImages({required String prompt});
 }
 
 class HttpApiClient implements ApiClient {
@@ -11,15 +11,19 @@ class HttpApiClient implements ApiClient {
   HttpApiClient({required ApiRequester requester}) : _requester = requester;
 
   @override
-  Future<ApiResult> loadImages({required String prompt}) async {
+  Future<List<AiImageModel>> loadImages({required String prompt}) async {
     final body = {
       "prompt": prompt,
       "n": 4,
     };
 
-    return await _requester.performPostRequest(
+    final result = await _requester.performPostRequest(
       path: 'images/generations',
       body: body,
     );
+
+    return result
+        .map<AiImageModel>((image) => AiImageModel.fromJson(image))
+        .toList();
   }
 }

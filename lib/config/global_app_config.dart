@@ -1,4 +1,4 @@
-import 'package:global_configuration/global_configuration.dart';
+import 'package:global_configs/global_configs.dart';
 
 abstract class GlobalAppConfig {
   Future<void> setupConfiguration();
@@ -8,31 +8,31 @@ abstract class GlobalAppConfig {
 }
 
 class GlobalAppConfigImpl implements GlobalAppConfig {
-  final GlobalConfiguration _configuration;
+  final GlobalConfigs _configuration;
 
   GlobalAppConfigImpl({
-    required GlobalConfiguration configuration,
+    required GlobalConfigs configuration,
   }) : _configuration = configuration;
 
   @override
   Future<Map<String, dynamic>> setupConfiguration() async {
-    await _configuration.loadFromPath('config/app_config.json');
+    await _configuration.loadJsonFromdir('config/app_config.json');
 
-    return _configuration.appConfig;
+    return _configuration.configs;
   }
 
   @override
   String get apiKey {
-    return _configuration.getValue('api_key');
+    return _configuration.get('api_key');
   }
 
   @override
   String get serverUrl {
-    return _configuration.getValue('server_url');
+    return _configuration.get('server_url');
   }
 
   @override
   String get serverVersion {
-    return _configuration.getValue('server_version');
+    return _configuration.get('server_version');
   }
 }

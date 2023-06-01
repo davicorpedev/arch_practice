@@ -21,7 +21,7 @@ class AppError extends StatelessWidget {
           children: [
             Text(
               description,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),

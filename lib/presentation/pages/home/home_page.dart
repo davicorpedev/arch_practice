@@ -1,5 +1,4 @@
 import 'package:arch_practice/application/blocs/home_page/home_page_cubit.dart';
-
 import 'package:arch_practice/l10n/app_localizations.dart';
 import 'package:arch_practice/presentation/utils/map_failure_to_message.dart';
 import 'package:arch_practice/presentation/widgets/app_error.dart';
@@ -100,7 +99,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                   return Center(
                     child: Text(
                       AppLocalizations.of(context).homePageErrorLabel,
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.titleMedium,
                       textAlign: TextAlign.center,
                     ),
                   );

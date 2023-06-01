@@ -1,4 +1,4 @@
-import 'package:practice_api/datasources/image_data_source.dart';
+import 'package:practice_api/client/api_client.dart';
 import 'package:practice_api/error/exceptions.dart';
 import 'package:practice_repositories/entities/ai_image.dart';
 import 'package:practice_repositories/entities/result.dart';
@@ -10,20 +10,20 @@ abstract class ImageRepository {
 }
 
 class ImageRepositoryImpl implements ImageRepository {
-  final ImageDataSource _dataSource;
+  final ApiClient _apiClient;
   final NetworkInfo _networkInfo;
 
   ImageRepositoryImpl({
-    required ImageDataSource dataSource,
+    required ApiClient apiClient,
     required NetworkInfo networkInfo,
-  })  : _dataSource = dataSource,
+  })  : _apiClient = apiClient,
         _networkInfo = networkInfo;
 
   @override
   Future<Result<List<AiImage>>> loadImages({required String prompt}) async {
     if (await _networkInfo.isConnected) {
       try {
-        final result = await _dataSource.loadImages(prompt: prompt);
+        final result = await _apiClient.loadImages(prompt: prompt);
 
         return Result.success(result);
       } on ServerException {

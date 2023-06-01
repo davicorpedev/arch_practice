@@ -14,21 +14,21 @@ dependencies:
   # Internationalization
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: ^0.18.0
   # Provider for state management
-  provider: ^6.0.4
+  provider: ^6.0.5
   # Bloc for state management
-  flutter_bloc: ^8.1.1
-  bloc_test: ^9.1.0
+  flutter_bloc: ^8.1.3
+  bloc_test: ^9.1.3
   # Value equality
   equatable: ^2.0.5
   # Remote API
-  http: ^0.13.5
+  http: ^1.0.0
   internet_connection_checker: ^1.0.0+1
   # Navigation
   flow_builder: ^0.0.9
   # Configuration
-  global_configuration: ^2.0.0-nullsafety.1
+  global_configs: ^1.1.2
   # UI
   flutter_staggered_grid_view: ^0.6.2
   cupertino_icons: ^1.0.2
@@ -41,7 +41,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
   mocktail: ^0.3.0
 
 flutter:

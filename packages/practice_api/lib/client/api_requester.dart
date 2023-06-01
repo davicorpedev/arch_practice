@@ -1,11 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:practice_api/client/api_result.dart';
 import 'package:practice_api/error/exceptions.dart';
 
 abstract class ApiRequester {
-  Future<ApiResult> performPostRequest({
+  Future performPostRequest({
     required String path,
     required Map<String, dynamic> body,
   });
@@ -28,7 +27,7 @@ class HttpApiRequester implements ApiRequester {
         _serverVersion = serverVersion;
 
   @override
-  Future<ApiResult> performPostRequest({
+  Future performPostRequest({
     required String path,
     required Map<String, dynamic> body,
   }) async {
@@ -69,11 +68,9 @@ class HttpApiRequester implements ApiRequester {
     );
   }
 
-  ApiResult _decodeResponse({required String body}) {
+  dynamic _decodeResponse({required String body}) {
     final decodedResponse = json.decode(body);
 
-    final data = decodedResponse['data'];
-
-    return ApiResult.from(data);
+    return decodedResponse['data'];
   }
 }
